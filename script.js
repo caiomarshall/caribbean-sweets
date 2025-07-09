@@ -215,23 +215,10 @@ document.addEventListener('DOMContentLoaded', function() {
             copyCouponBtn.innerText = translations[lang]['copied_btn'];
             copyCouponBtn.classList.add('copied');
             setTimeout(() => {
-                copyCouponBtn.innerText = translations[lang]['copy_coupon_btn'];
+                const currentLang = document.documentElement.lang;
+                copyCouponBtn.innerText = translations[currentLang]['copy_coupon_btn'];
                 copyCouponBtn.classList.remove('copied');
             }, 2000);
-        });
-    }
-
-    const backToTopButton = document.getElementById('back-to-top');
-    if(backToTopButton) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 

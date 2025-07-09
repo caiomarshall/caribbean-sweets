@@ -37,10 +37,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.4s ease, color 0.4s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .preloader {
@@ -76,6 +73,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 20px;
+    padding-top: 120px; /* CONTROLE AQUI A DISTÂNCIA DO TOPO */
     box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -195,7 +193,6 @@ body.dark-mode::before { opacity: 0.3; }
     text-align: center;
     z-index: 1;
     transition: background-color 0.4s ease, border-color 0.4s ease;
-    margin-top: 60px;
 }
 
 header { margin-bottom: 20px; }
@@ -403,11 +400,13 @@ body.modal-open .modal-content {
 .menu-item-price { color: var(--cherry-red); }
 
 @media (max-width: 600px) {
+    .page-wrapper {
+        padding-top: 110px;
+    }
     .controls { top: 10px; right: 10px; left: 10px; }
     body.banner-visible .controls {
         top: 85px;
     }
-    .main-container { padding: 30px 20px; }
     header h1 { font-size: 2.5rem; }
     .theme-switcher button, .language-switcher button { width: 35px; height: 35px; font-size: 1rem; }
     .language-switcher button { font-size: 0.8rem; }
